@@ -1,6 +1,9 @@
 from django.urls import path
-from . import views
+from .views import MainViews
+
 
 urlpatterns = [
-    path('', views.index)
+    path('app/statistic/', MainViews.Reviews.as_view()),
+    path('search/', MainViews.SearchApps.as_view()),
+    path('search/app_store/', MainViews.FindAppInAppStore.as_view()),
 ]
